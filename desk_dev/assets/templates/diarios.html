@@ -1,0 +1,141 @@
+<section id="maquinas">
+	<div class="titulo">
+		<h3><i class="icon-users"></i>Planta | <span class="subTitulo">Diarios</span></h3>
+	</div>
+	<div class="row">
+		<table class="gvDatos"></table>
+	</div>
+	<div class="large modal-save reveal-modal reveal-custom" data-reveal='data-reveal'>
+		<div class="pop-head">
+			<label><i class="icon-users"></i>Diario<label>
+		</div>
+		<form class="form-data pop-body" data-abide>
+			<div class="row">
+				<div class="small-3 columns">
+					<label>
+						Fecha: <small>Requerido</small>
+						<input type="text" class="date" placeholder="YYYY-MM-DD" data-field="fecha" data-mask="fecha" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-5 columns">
+					<label>
+						Asfalto: <small>Requerido</small>
+						<input type="text" class="tya" placeholder="Nombre del asfalto" data-field="idConsumible" data-include="consumible" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-2 columns">
+					<label>
+						Asfalto inicial: <small>Requerido</small>
+						<input type="text" placeholder="Cantidad de asfalto" data-field="asfalto_ini" maxlength="10" data-mask="decimalesx" pattern="decimales" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-2 columns">
+					<label>
+						Asfalto final: <small>Requerido</small>
+						<input type="text" placeholder="Cantidad de asfalto" data-field="asfalto_fin" maxlength="10" data-mask="decimalesx" pattern="decimales" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-6 columns">
+					<label>
+						Material 1: <small>Requerido</small>
+						<input type="text" class="tya" placeholder="Nombre del material" data-base="idMaterial" data-field="idMaterial1" data-include="material1" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-3 columns">
+					<label>
+						Material 1 inicial: <small>Requerido</small>
+						<input type="text" placeholder="Cantidad de material" data-field="material1_ini" maxlength="10" data-mask="decimalesx" pattern="decimales" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-3 columns">
+					<label>
+						Material 1 final: <small>Requerido</small>
+						<input type="text" placeholder="Cantidad de material" data-field="material1_fin" maxlength="10" data-mask="decimalesx" pattern="decimales" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-6 columns">
+					<label>
+						Material 2:
+						<input type="text" class="tya" placeholder="Nombre del material" data-base="idMaterial" data-field="idMaterial2" data-include="material2">
+					</label>
+				</div>
+				<div class="small-3 columns">
+					<label>
+						Material 2 inicial:
+						<input type="text" placeholder="Cantidad de material" data-field="material2_ini" maxlength="10" data-mask="decimalesx" pattern="decimales">
+					</label>
+				</div>
+				<div class="small-3 columns">
+					<label>
+						Material 2 final:
+						<input type="text" placeholder="Cantidad de material" data-field="material2_fin" maxlength="10" data-mask="decimalesx" pattern="decimales">
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-6 columns">
+					<label>
+						Material 3:
+						<input type="text" class="tya" placeholder="Nombre del material" data-base="idMaterial" data-field="idMaterial3" data-include="material3">
+					</label>
+				</div>
+				<div class="small-3 columns">
+					<label>
+						Material 3 inicial:
+						<input type="text" placeholder="Cantidad de material" data-field="material3_ini" maxlength="10" data-mask="decimalesx" pattern="decimales">
+					</label>
+				</div>
+				<div class="small-3 columns">
+					<label>
+						Material 3 final:
+						<input type="text" placeholder="Cantidad de material" data-field="material3_fin" maxlength="10" data-mask="decimalesx" pattern="decimales">
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-6 columns">
+					<label>
+						Material 4:
+						<input type="text" class="tya" placeholder="Nombre del material" data-base="idMaterial" data-field="idMaterial4" data-include="material4">
+					</label>
+				</div>
+				<div class="small-3 columns">
+					<label>
+						Material 4 inicial:
+						<input type="text" placeholder="Cantidad de material" data-field="material4_ini" maxlength="10" data-mask="decimalesx" pattern="decimales">
+					</label>
+				</div>
+				<div class="small-3 columns">
+					<label>
+						Material 4 final:
+						<input type="text" placeholder="Cantidad de material" data-field="material4_fin" maxlength="10" data-mask="decimalesx" pattern="decimales">
+					</label>
+				</div>
+			</div>
+		</form>
+		<div class="row pop-foot">
+			<div class="small-12 columns">
+				<button type="button" class="btn-aceptar btn tiny btn-success button ico-guardar">Guardar</button>
+				<button type="button" class="btn-cancelar btn tiny btn-danger button ico-cancelar">Cancelar</button>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="small-12 columns">
+			<button type="button" class="btn-nuevo tiny btn button ico-agregar btn-success">Agregar</button>
+			<button type="button" class="btn-modificar btn tiny btn-primary button ico-modificar">Modificar</button>
+			<button type="button" class="btn-eliminar btn tiny button btn-danger ico-cancelar">Eliminar</button>
+		</div>
+	</div>
+</section>

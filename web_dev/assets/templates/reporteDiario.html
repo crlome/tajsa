@@ -1,0 +1,344 @@
+<section id="reporteDiario" class="show-scroll">
+	<div class="titulo">
+		<h3><i class="icon-users"></i>Reporte | <span class="subTitulo">Historico de cortes</span></h3>
+	</div>
+
+	<form class="form-data" data-abide>
+		<div class="row">
+			<div class="small-12 columns">
+				<label>
+					Cortes:
+					<select data-field="idCierre">
+					</select>
+				</label>
+			</div>
+		</div>
+	</form>
+
+	<div class="row">
+		<div class="small-12 columns pnl-menu is-hidden">
+			<ul class="breadcrumbs">
+				<li class="current" data-panel="pnl-resumen"><a href="#">Resumen</a></li>
+				<li data-panel="pnl-detalle"><a href="#">Detalle</a></li>
+				<li data-panel="pnl-materiales"><a href="#">Materiales</a></li>
+				<li data-panel="pnl-emulsiones"><a href="#">Emulsiones</a></li>
+				<!-- <li data-panel="pnl-consumibles"><a href="#">Consumibles</a></li> -->
+				<!-- <li data-panel="pnl-grafica"><a href="#">Grafica</a></li> -->
+			</ul>
+		</div>
+		<div class="small-12 columns pnl-menu is-hidden">
+			<div class="alert-box custom" data-alert="data-alert"><span>Produccion: </span><span class="spn-produccion">0</span><span> m³</span></div>
+		</div>
+		<div class="small-12 columns pnl-resumen pnl-panels">
+		</div>
+		<div class="small-12 columns pnl-detalle pnl-panels is-hidden">
+		</div>
+		<div class="small-12 columns pnl-materiales pnl-panels is-hidden">
+		</div>
+		<div class="small-12 columns pnl-emulsiones pnl-panels is-hidden">
+		</div>
+		<div class="small-12 columns pnl-consumibles pnl-panels is-hidden">
+		</div>
+		<div class="small-12 columns pnl-grafica pnl-panels is-hidden">
+			<div>aqui va la grafica</div>
+		</div>
+	</div>
+
+	<div class="xlarge modal-detalle reveal-modal reveal-custom" data-reveal="data-reveal">
+		<div class="pop-head">
+			<label><i class="icon-users"></i>Detalle
+				<span class="right icon-cross pointer ico-cancel"></span>	
+			<label>
+		</div>
+		<form class="form-data pop-body" data-abide>
+			<div class="row">
+				<div class="small-12 columns">
+					<table class="table-custom gv-detalle">
+					</table>
+				</div>
+			</div>
+		</form>
+		<div class="row pop-foot">
+			<div class="small-12 columns">
+				<button type="button" class="btn-cancelar btn tiny btn-danger button ico-cancelar">Salir</button>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/template-handlebars-x" class="tmp_option_cierres">
+		<option value="-1">Seleccione un cierre</option>
+		{{#data}}
+		<option value="{{idCierre}}">[{{idCierre}}] {{GetFecha fechaIni}} - {{GetFecha fechaFin}}</option>
+		{{/data}}
+	</script>
+
+	<script type="text/template-handlebars-x" class="tmp_table_resumen">
+		<table class="table-custom gv-resumen">
+			<thead>
+				<tr class="titulo">
+					<th>Consumible</th>
+					<th class="min">M³</th>
+					<th class="min">Existencia Anterior</th>
+					<th class="min">Entradas</th>
+					<th class="min">Salidas y Consumos</th>
+					<th class="min">Existencia Actual</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#data}}
+				<tr>
+					<td>{{consumible}}</td>
+					<td class="text-right td-prod-cub">0</td>
+					<td class="text-right">{{SetFormat 'money' anterior}}</td>
+					<td class="text-right">{{SetFormat 'money' entradas}}</td>
+					<td class="text-right td-salidas">{{SetFormat 'money' salidas}}</td>
+					<td class="text-right">{{SetFormat 'money' actual}}</td>
+				</tr>
+				{{/data}}
+			</tbody>
+		</table>
+
+		<div class="row">
+			<div class="small-4 columns">
+				<div class="grf-gas grf-grafica" style="min-width:310px; width: 100%; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="small-8 columns">
+				<div class="grf-resumen grf-grafica" style="min-width:310px; width: 100%; height: 400px; margin: 0 auto"></div>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/template-handlebars-x" class="tmp_table_produccion">
+		<table class="table-custom">
+			{{#tablas}}
+			<thead>
+				<tr class="titulo">
+					<th colspan="6" class="text-center">Consumible: {{consumible}}</th>
+				</tr>
+				<tr class="titulo">
+					<th>Obra</th>
+					<th class="min">Tipo</th>
+					<th class="min">Tend./Sumn.</th>
+					<th>Fecha/Hora</th>
+					<th class="min">Cantidad</th>
+					<th class="min">M³</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#data}}
+				<tr>
+					{{#ifCond tipo 2}}
+						<td>{{produccion.obra.nombre}}</td>
+						<td>{{GetTipo tipo}}</td>
+					{{else}}
+						{{#isNull idInventarioAjuste}}
+						<td colspan="2" class="text-center">{{GetTipo tipo}}</td>
+						{{else}}
+						<td colspan="2" class="text-center">Ajuste</td>
+						{{/isNull}}
+					{{/ifCond}}
+					<td>{{GetTipoUtilizado produccion.tipo}}</td>
+					<td>{{GetFecha fecha}} {{hora}}</td>
+					<td class="text-right">{{SetFormat 'money' cantidad}}</td>
+					<td class="text-right">{{SetFormat 'money' metros 0}}</td>
+				</tr>
+				{{/data}}
+			</tbody>
+			<tbody>
+				<tr>
+					<td colspan="4" class="text-right">Total:</td>
+					<td class="text-right">{{SetFormat 'money' total.cantidad}}</td>
+					<td class="text-right">{{SetFormat 'money' total.metros 0}}</td>
+				</tr>
+			</tbody>
+
+			<tbody>
+				<tr>
+					<td colspan="7"></td>
+				</tr>
+			</tbody>
+			{{/tablas}}
+		</table>
+	</script>
+
+	<script type="text/template-handlebars-x" class="tmp_table_materiales">
+		<table class="table-custom pointer">
+			<thead>
+				<tr class="titulo">
+					<th>Material</th>
+					<th class="min">Anterior</th>
+					<th class="min">Entradas</th>
+					<th class="min">Salidas</th>
+					<th class="min">Actual</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#data}}
+				<tr data-id="{{idMaterial}}">
+					<td>{{material}}</td>
+					<td class="text-right">{{SetFormat 'money' anterior}}</td>
+					<td class="text-right">{{SetFormat 'money' entradas}}</td>
+					<td class="text-right">{{SetFormat 'money' salidas}}</td>
+					<td class="text-right">{{SetFormat 'money' actual}}</td>
+				</tr>
+				{{/data}}
+			</tbody>
+		</table>
+
+		<div class="row">
+			<div class="small-12 columns">
+				<div class="grf-materiales grf-grafica" style="min-width:310px; max-width:900px; width: 100%; height: 400px; margin: 0 auto"></div>
+			</div>
+		</div>
+	</script>
+	<script type="text/template-handlebars-x" class="tmp_table_emulsiones">
+		<table class="table-custom pointer">
+			<thead>
+				<tr class="titulo">
+					<th class="min">Anterior</th>
+					<th class="min">Entradas</th>
+					<th class="min">Salidas</th>
+					<th class="min">Actual</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#data}}
+				<tr>
+					<td class="text-right">{{SetFormat 'money' anterior}}</td>
+					<td class="text-right">{{SetFormat 'money' entradas}}</td>
+					<td class="text-right">{{SetFormat 'money' salidas}}</td>
+					<td class="text-right">{{SetFormat 'money' actual}}</td>
+				</tr>
+				{{/data}}
+			</tbody>
+		</table>
+
+		<div class="row">
+			<div class="small-12 columns">
+				<div class="grf-emulsiones grf-grafica" style="min-width:310px; max-width:900px; width: 100%; height: 400px; margin: 0 auto"></div>
+			</div>
+		</div>
+	</script>
+	<script type="text/template-handlebars-x" class="tmp_table_consumibles">
+		<table class="table-custom pointer">
+			<thead>
+				<tr class="titulo">
+					<th>Consumibles</th>
+					<th class="min">Anterior</th>
+					<th class="min">Entradas</th>
+					<th class="min">Salidas</th>
+					<th class="min">Actual</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#data}}
+				<tr data-id="{{idConsumible}}">
+					<td>{{consumible}}</td>
+					<td class="text-right">{{SetFormat 'money' anterior}}</td>
+					<td class="text-right">{{SetFormat 'money' entradas}}</td>
+					<td class="text-right">{{SetFormat 'money' salidas}}</td>
+					<td class="text-right">{{SetFormat 'money' actual}}</td>
+				</tr>
+				{{/data}}
+			</tbody>
+		</table>
+
+		<div class="row">
+			<div class="small-12 columns">
+				<div class="grf-consumibles grf-grafica" style="min-width:310px; max-width:900px; width: 100%; height: 400px; margin: 0 auto"></div>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/template-handlebars-x" class="tmp_pop_table_consumibles">
+		<thead>
+			<tr class="titulo">
+				<th>Obra</th>
+				<th>Tipo</th>
+				<th class="min">Fecha</th>
+				<th class="min">Hora</th>
+				<th class="min">Cantidad</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#data}}
+			<tr>
+				{{#ifCond tipo 2}}
+					<td>{{obra.nombre}}</td>
+					<td>{{GetTipo tipo}}</td>
+				{{else}}
+					<td colspan="2" class="text-center">{{GetTipo tipo}}</td>
+				{{/ifCond}}
+				<td>{{GetFecha fecha}}</td>
+				<td>{{hora}}</td>
+				<td class="text-right">{{SetFormat 'money' cantidad}}</td>
+			</tr>
+			{{/data}}
+		</tbody>
+	</script>
+	<script type="text/template-handlebars-x" class="tmp_pop_table_emulsiones">
+		<thead>
+			<tr class="titulo">
+				<th>Cliente</th>
+				<th>Tipo</th>
+				<th class="min">Fecha</th>
+				<th class="min">Hora</th>
+				<th class="min">Cantidad</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#data}}
+			<tr>
+				{{#ifCond tipo 2}}
+					<td>{{cliente.nombre}}</td>
+					<td>{{GetTipo tipo}}</td>
+				{{else}}
+					<td colspan="2" class="text-center">{{GetTipo tipo}}</td>
+				{{/ifCond}}
+				<td>{{GetFecha fecha}}</td>
+				<td>{{hora}}</td>
+				<td class="text-right">{{SetFormat 'money' cantidad}}</td>
+			</tr>
+			{{/data}}
+		</tbody>
+	</script>
+	<script type="text/template-handlebars-x" class="tmp_pop_table_materiales">
+		<thead>
+			<tr class="titulo">
+				<th>Cliente</th>
+				<th>Obra</th>
+				<th>Producto</th>
+				<th>Tipo</th>
+				<th class="min">Fecha</th>
+				<th class="min">Hora</th>
+				<th class="min">M³</th>
+				<th class="min">Cantidad</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#data}}
+			<tr>
+				{{#ifCond tipo 2}}
+					{{#isNull idProduccion}}
+						<td>{{cliente.nombre}}</td>
+						<td>{{obra.nombre}}</td>
+						<td>-</td>
+					{{else}}
+						<td>{{produccion.cliente.nombre}}</td>
+						<td>{{produccion.obra.nombre}}</td>
+						<td>{{produccion.producto.nombre}}</td>
+					{{/isNull}}
+					<td>{{GetTipo tipo}}</td>
+				{{else}}
+					<td colspan="4" class="text-center">{{GetTipo tipo}}</td>
+				{{/ifCond}}
+				<td>{{GetFecha fecha}}</td>
+				<td>{{hora}}</td>
+				<td class="text-right">{{SetFormat 'money' produccion.cantidad}}</td>
+				<td class="text-right">{{SetFormat 'money' cantidad}}</td>
+			</tr>
+			{{/data}}
+		</tbody>
+	</script>
+
+</section>

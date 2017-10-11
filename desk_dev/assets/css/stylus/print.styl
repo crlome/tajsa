@@ -1,0 +1,191 @@
+h2
+	page-break-before always !important
+
+@media all
+	.page-break
+		border 1px solid #FFF !important
+		display block
+		page-break-before always
+
+@media print
+	.row
+		position relative
+		
+		.columns
+			position initial
+
+	.piePagina
+		position absolute
+		bottom 0px !important
+		right 5px !important
+	.tituloObs
+		text-align center
+		font-size 30px
+		font-weigth bold
+		color #000
+		&.ladoA
+			position absolute !important			
+			top 80% !important
+			left 35% !important
+	.ladoAfixBoletas		
+		position absolute !important
+		top 50% !important
+		left 5% !important		
+
+	.piePaginaSecundario
+		position absolute
+		bottom 5px !important
+		left 5px !important
+
+	.fixfecha
+		margin-right 40px !important
+
+	.page-break	
+		border 1px solid #FFF !important
+		display block
+		page-break-before always
+
+	.small-1
+		width 8.33333%
+	.small-2
+		width 16.66667%
+	.small-3
+		width 25%
+	.small-4
+		width 33.33333%
+	.small-5
+		width 41.66667%
+	.small-6
+		width 50%
+	.small-7
+		width 58.33333%
+	.small-8
+		width 66.66667%
+	.small-9
+		width 75%
+	.small-10
+		width 83.33333%
+	.small-11
+		width 91.66667%
+	.small-12
+		width 100%
+
+	html,
+	body
+		height auto
+		margin 0
+		overflow visible !important
+		padding 0
+		position relative
+		width 100%
+	
+		header,
+		main,
+		#main-menu,
+		.reveal-modal.open,
+		.pnlAlert,
+		.loading,
+		.user-data
+			display none !important
+
+		.pnl-print
+			font-size 8px !important
+			display block !important
+			/*height auto
+			left 0
+			margin 0
+			padding 0
+			position absolute
+			top 0
+			width 100%*/
+
+			h6
+				line-height 100px
+				margin 0
+				padding 0
+
+			img
+				height 100px
+				width 100%
+
+			table
+				&.noBordeTable
+					border 1px solid #fff
+				thead
+					tr
+						border 1px solid black !important
+						th
+							border 1px solid black !important
+							margin 0
+							padding 0
+							
+							span
+								font-size 10px
+								margin 0px !important
+								padding-left 9px !important
+								
+							&.min
+								width auto
+								margin 0px !important
+								padding 0px !important
+								text-align center !important
+								span
+									font-size 9px
+									margin 0px
+									padding 0px
+							&.numLista
+								width 20px
+
+				tbody
+					tr,td,th
+						border 1px solid black
+						margin 0
+						padding 0
+						font-size 10px
+						margin-left 10px
+					&.noBordeCell
+						tr
+							td
+								border 1px solid #fff
+								padding-left 5px !important
+
+	/* Reportes Global */
+	.print-table
+	
+		tr,
+		td
+			padding 0 !important
+			margin 0 !important
+
+		.vertical-th
+
+			span
+				font-size 0.8em !important
+	/*.l1
+		position fixed !important
+		top 0px !important
+		left 0px !important
+		border 1px solid red !important
+		width 100% !important
+		height 50% !important	
+	.l2
+		position fixed !important
+		bottom 0px !important
+		left 0px !important
+		border 1px solid blue !important
+		width 100% !important
+		height 50% !important*/
+
+	/* Lista de Recursamiento */
+	.print-panel
+		margin-left 0px !important
+
+	.print-table-expand
+		width 1200px !important
+		margin-left 0px !important
+		zoom 90%
+
+		.print-cell-special
+			white-space nowrap
+			padding 0 10px !important
+	

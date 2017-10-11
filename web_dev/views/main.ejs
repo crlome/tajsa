@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>TAJSA</title>
+		<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+		<link rel="stylesheet" href="/css/normalize.css" type="text/css" media="all"/>
+		<link rel="stylesheet" href="/css/typeahead.css" type="text/css" media="all"/>
+		<link rel="stylesheet" href="/css/jquery.datetimepicker.css" type="text/css" media="all"/>
+		<link rel="stylesheet" href="/css/icomoon.css" type="text/css" media="all"/>
+		<link rel="stylesheet" href="/css/foundation.css" type="text/css" media="all"/>
+		<link rel="stylesheet" href="/css/stylus/main.css" type="text/css" media="all"/>
+
+		<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'> -->
+
+		<script type="text/javascript">
+			window.requireNode = window.require;
+			window.require = undefined;
+		</script>
+	</head>
+	<body>
+		<header>
+			<!-- <section class="head-center">
+				<i class="icon-searchTin"></i><input type="text" placeholder=" Buscar" class="buscarMain" />
+			</section> -->
+			<section class="head-right">
+				<ul class="user-options">
+					<li class="area-user">
+						<a class="user-info">
+							<span class="circle-user menuOpen">
+								<img src="/img/imagenPerfil.png"/>
+							</span>
+							<i class="icon-chevron-down menuOpen"></i>
+						</a>
+					</li>
+				</ul>
+			</section>
+		</header>
+		<ul class="user-menu">
+			<li>
+				<a href="#usuarioNuevo?idUsuario= <%#= @usuario['idUsuario'] %>">
+					<i class="icon-settings"></i> Configuracion</a>
+			</li>
+			<li>
+				<a href="/sesiones/logout">
+					<i class="icon-logout"></i> Salir
+				</a>
+			</li>
+		</ul>
+		<nav>
+			<section class="head-left">
+				<img src="/img/logoNav.png"/>
+			</section>
+			<br/>
+			<div class="busqueda">
+				<span>
+					<i class="icon-searchTin"></i><input type="text" class="txtBusqueda" placeholder="Busqueda de menu"/>
+				</span>
+			</div>
+			<ul class="menu-n1">
+				<% for(var key in user['menus_usuarios']) {%>
+				<li class="has-submenu">
+					<a href="#"><i class="<%= key.split('::')[0] %>"></i><label class="textMenu"><%= key.split('::')[1] %></label></a>
+					<ul class="menu-n2" style="display: none;">
+						<% for(var i=0; i<user['menus_usuarios'][key].length; i++) {%>
+						<li>
+							<a href="#<%= user['menus_usuarios'][key][i]['menu_pagina']['pagina'] %>">
+								<i class="icon-punto inicioM2"></i>
+								<%= user['menus_usuarios'][key][i]['menu_pagina']['menu_n2']['nombre'] %>
+							</a>
+						</li>
+						<% } %>
+					</ul>
+				</li>
+				<% } %>
+			</ul>
+			<ul class="search-n1 is-hidden">
+				<% for(var key in user['menus_usuarios']) {%>
+					<% for(var i=0; i<user['menus_usuarios'][key].length; i++) {%>
+					<li>
+						<a href="#<%= user['menus_usuarios'][key][i]['menu_pagina']['pagina'] %>">
+							<i class="icon-punto inicioM2"></i>
+							<%= user['menus_usuarios'][key][i]['menu_pagina']['menu_n2']['nombre'] %>
+						</a>
+					</li>
+					<% } %>
+				<% } %>
+			</ul>
+		</nav>
+
+		<main>
+			<section id="load_content" class="show-scroll">
+			</section>
+		</main>
+
+		<div class="wrap-layer">
+		</div>
+
+		<section class="loading">
+			<label>
+				<i class="icon-spinner tya-loading icon-spin"></i> Cargando...
+			</label>
+		</section>
+
+		<div class="pnl-print is-hidden"></div>
+
+		<section class="pnlAlert warning ">
+		</section>
+
+		<div id="popConfirmacion" class="reveal-modal tiny popConfirmacion reveal-custom" data-reveal="data-reveal">
+			<section class="pop-head">
+				<label>Eliminar</label>
+			</section>
+			<section class="pop-body">
+				<label class='pregunta'>¿Desea eliminar el registro seleccionado?</label>
+			</section>
+			<section class="pop-footer">
+				<button type="button" class="button success tiny btn-aceptar ico-aceptar">Aceptar</button>
+				<button type="button" class="button alert tiny btn-cancelar ico-cancelar">Cancelar</button>
+			</section>
+		</div>
+
+		<div class="reveal-modal tiny reveal-custom" id="popAdvertencia" data-reveal>
+			<section class="pop-head">
+				<label>Advertencia</label>
+			</section>
+			<section class="pop-body text-left">
+				<label class="mensaje"></label>
+			</section>
+			<section class="pop-footer">
+				<button type="button" class="button tiny success custom-button btn-aceptar aceptar-btn">Aceptar</button>
+			</section>
+		</div>
+
+		<div class="reveal-modal large reveal-custom" id="popHelperTya" data-reveal>
+			<section class="pop-head">
+				<label>Busqueda</label>
+			</section>
+			<section class="pop-body text-left">
+				<table class="table table-custom gv-hya">
+				</table>
+			</section>
+			<section class="pop-footer">
+				<button type="button" class="button alert tiny btn-cancelar cancelar-btn">Cancelar</button>
+			</section>
+		</div>
+
+		<script type="text/template-handlebars-x" class="tmp_table_hya">
+			<thead>
+				<tr class="titulo">
+					{{#keys}}
+					<th>
+						<span>{{.}}</span>
+					</th>
+					{{/keys}}
+				</tr>
+			</thead>
+			<tbody>
+				{{#rows}}
+				<tr data-info="{{toJSON .}}">
+					{{#each .}}
+						{{#notCol @key}}
+							<td>{{.}}</td>
+						{{/notCol}}
+					{{/each}}
+				</tr>
+				{{/rows}}
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="{{long}}">
+						<a href="#" class="prev-hya"><i class="icon-prev"></i> Anterior</a> |
+						<a href="#" class="next-hya"><i class="icon-next"></i> Sigiente</a>
+					</td>
+				</tr>
+			</tfoot>
+		</script>
+
+		<script type="text/template-handlebars-x" class="tmp_ul_menus_bs">
+			{{#menus}}
+				{{#if menus}}
+					<li class="has-submenu">
+						<a href="#{{pagina}}">{{nombre}} <i class="fa fa-fw fa-caret-right"></i></a>
+						<ul class="menu-n2">
+							{{#menus}}
+								<li><a href="#{{pagina}}">{{nombre}}</a></li>
+							{{/menus}}
+						</ul>
+					</li>
+				{{else}}
+					<li><a href="#{{pagina}}">{{nombre}}</a></li>
+				{{/if}}
+			{{/menus}}
+		</script>
+
+		<script type="text/javascript" data-main="/js/main" src="/js/deps/require_2.2.0.js"></script>
+	</body>
+</html>

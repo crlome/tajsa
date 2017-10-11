@@ -1,0 +1,62 @@
+<section id="consumibles">
+	<div class="titulo">
+		<h3><i class="icon-users"></i>Catalogo | <span class="subTitulo">Consumibles</span></h3>
+	</div>
+	<div class="row">
+		<table class="gvDatos"></table>
+	</div>
+	<div class="medium modal-save reveal-modal reveal-custom small" data-reveal='data-reveal'>
+		<div class="pop-head">
+			<label><i class="icon-users"></i>Consumible
+				<span class="right icon-cross pointer ico-cancel"></span>
+			<label>
+		</div>
+		<form class="form-data pop-body" data-abide>
+			<div class="row">
+				<div class="small-8 columns">
+					<label>
+						Nombre: <small>Requerido</small>
+						<input type="text" placeholder="Nombre del material" data-field="nombre" maxlength="180" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-2 columns">
+					<label>
+						Producción:
+						<select data-field="produccion">
+							<option value="1">General</option>
+							<option value="2">Planta</option>
+						</select>
+					</label>
+				</div>
+				<div class="small-2 columns">
+					<label>
+						Tipo:
+						<select data-field="tipo">
+							<option value="1">Diesel</option>
+							<option value="2">Gasolina</option>
+							<option value="3">Lubricante</option>
+							<option value="4">Combustible</option>
+							<option value="5">Gas</option>
+							<option value="6">Asfalto</option>
+							<option value="7">Otro</option>
+						</select>
+					</label>
+				</div>
+			</div>
+		</form>
+		<div class="row pop-foot">
+			<div class="small-12 columns">
+				<button type="button" class="btn-aceptar btn tiny btn-success button ico-guardar">Guardar</button>
+				<button type="button" class="btn-cancelar btn tiny btn-danger button ico-cancelar">Cancelar</button>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="small-12 columns">
+			<button type="button" class="btn-nuevo tiny btn button ico-agregar btn-success">Agregar</button>
+			<button type="button" class="btn-modificar btn tiny btn-primary button ico-modificar">Modificar</button>
+			<button type="button" class="btn-eliminar btn tiny button btn-danger ico-cancelar">Eliminar</button>
+		</div>
+	</div>
+</section>

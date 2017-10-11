@@ -1,0 +1,176 @@
+<section id="producciones">
+	<div class="titulo">
+		<h3><i class="icon-users"></i>Control | <span class="subTitulo">Produccion</span></h3>
+	</div>
+
+	<div class="row">
+		<div class="small-12 columns">
+			<table class="table-custom gv-producciones">
+				<thead>
+					<tr class="titulo">
+						<th colspan="3" class="text-center">Produccion</th>
+						<th colspan="4">
+							<button type="button" class="button btn-agregar success tiny ico-agregar block">Agregar</button>
+						</th>
+					</tr>
+					<tr class="titulo">
+						<th>Cliente</th>
+						<th>Obra</th>
+						<th>Producto</th>
+						<!-- <th class="min">Folio</th> -->
+						<th class="min">Fecha</th>
+						<th class="min">M³</th>
+						<th class="min text-center"><span class="ico-generar"></span></th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+				<tfoot>
+					<tr>
+						<td colspan="4" class="text-right"><strong>Total:</strong></td>
+						<td class="total text-right">0</td>
+						<td></td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+	</div>
+
+	<div class="large modal-save reveal-modal reveal-custom show-scroll custom" data-reveal='data-reveal'>
+		<div class="pop-head">
+			<label><i class="icon-users"></i>Produccion<label>
+		</div>
+		<form class="form-data pop-body" data-abide>
+			<div class="row">
+				<div class="small-6 columns">
+					<label>
+						Cliente: <small>Requerido</small>
+						<input type="text" class="tya" placeholder="Nombre del cliente" data-field="idCliente" data-include="cliente" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-6 columns">
+					<label>
+						Obra: <small>Requerido</small>
+						<input type="text" class="tya" placeholder="Nombre de la obra" data-field="idObra" data-include="obra" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+			</div>
+			<div class="row">
+				<!-- <div class="small-6 columns">
+					<label>
+						Empleado: <small>Requerido</small>
+						<input type="text" class="tya" placeholder="Nombre del empleado" data-field="idEmpleado" data-include="empleado" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div> -->				
+				<div class="small-6 columns">
+					<label>
+						Producto: <small>Requerido</small>
+						<input type="text" class="tya edit-disable" placeholder="Nombre del producto" data-field="idProducto" data-include="producto" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-2 columns">
+					<label>
+						Metros³: <small>Requerido</small>
+						<input type="text" placeholder="Cantidad" data-field="cantidad" maxlength="6" data-mask="decimalesx" pattern="decimales" class="edit-disable" required>
+					</label>
+					<small class="error">Este campo es requerido y debe ser numerico. Pj. 1.5, 500</small>
+				</div>
+				<div class="small-2 columns">
+					<label>
+						Fecha: <small>Requerido</small>
+						<input type="text" class="date" placeholder="YYYY-MM-DD" data-field="fecha" data-mask="fecha" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-2 columns">
+					<label>
+						Tipo:
+						<select data-field="tipo">
+							<option value="1">Tendido</option>
+							<option value="2">Suministrado</option>
+						</select>
+					</label>
+				</div>
+			</div>
+			<!-- <div class="row">
+				<div class="small-4 columns">
+					<label>
+						Folio: <small>Requerido</small>
+						<input type="text" placeholder="Folio" data-field="folio" data-mask="numeros" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-4 columns">
+					<label>
+						Placas:
+						<input type="text" placeholder="Placas" data-field="placas">
+					</label>
+				</div>
+			</div> -->
+			<div class="row">
+				<div class="small-12 columns">
+					<table data-field="detalles" class="table table-custom table-compact gv-consumibles">
+						<thead>
+							<tr class="titulo">
+								<th>Consumible</th>
+								<!-- <th class="min">Tipo</th> -->
+								<th class="min">Coeficiente</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</form>
+		<div class="row pop-foot">
+			<div class="small-12 columns">
+				<button type="button" class="btn-aceptar btn tiny btn-success button ico-guardar">Guardar</button>
+				<button type="button" class="btn-cancelar btn tiny btn-danger button ico-cancelar">Cancelar</button>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/template-handlebars-x" class="tmp_tr_consumibles">
+		{{#data}}
+			<tr data-idconfiguraciondetalle="{{idConfiguracionDetalle}}" data-valor="{{valor}}">
+				<td class="on-padding">{{consumible.nombre}}</td>
+				<!-- <td class="text-center">
+				{{#ifCond consumible.tipo 6}}
+					&nbsp;
+					<select data-field="tipo_asfalto">
+						<option value="1">AC-20</option>
+						<option value="2">AC-20 MODIFICADO</option>
+						<option value="3">MODIFICADO</option>
+						<option value="4">MAQUILA MODIFICADO</option>
+						<option value="5">AC-30</option>
+						<option value="6">AC-30 MODIFICADO</option>
+						<option value="7">PG-70-22</option>
+						<option value="8">PG-76-22</option>
+					</select>
+				{{else}}
+					-
+				{{/ifCond}}
+				</td> -->
+				<td data-field="idConsumible" data-value="{{idConsumible}}"><input type="text" data-field="valor" data-valor="{{valor}}" value="{{valor}}"></td>
+			</tr>
+		{{/data}}
+	</script>
+	
+	<script type="text/template-handlebars-x" class="tmp_tr_produccion">
+		{{#data}}
+			<tr data-idproduccion="{{idProduccion}}" data-json="{{stringify .}}">
+				<td>{{cliente.nombre}}</td>
+				<td>{{obra.nombre}}</td>
+				<td>{{producto.nombre}}</td>
+				<!-- <td>{{folio}}</td> -->
+				<td>{{GetFecha fecha}}</td>
+				<td class="text-right cantidad">{{cantidad}}</td>
+				<td class="text-center settings"><span class="ico-modificar pointer"></span>| &nbsp; <span class="ico-cancelar pointer"></span></td>
+			</tr>
+		{{/data}}
+	</script>
+
+</section>

@@ -1,0 +1,501 @@
+.titulo
+	margin-top 15px !important
+	h3
+		color #000
+		font-family 'Roboto', sans-serif
+		font-size 30px !important
+		font-weight 300 !important
+	span.subTitulo
+		color gray !important
+	i
+		color #f9df0c !important
+		margin-right 20px !important
+		margin-left 32px
+
+.block
+	display block
+	width 100%
+
+
+
+
+.row
+	&.custom
+		max-width 80em !important
+
+.border
+	border 1px solid blue
+.form-custom
+	background-color rgba(255, 255, 255, 0.8)
+
+	input
+		height 1.9rem
+		margin 0 0 5px 0 !important
+
+.button
+	box-shadow 1px 1px 5px #333
+	font-weight bold
+	margin 1em 0.3em 0
+	text-shadow 1px 1px 5px #333
+
+	&.special
+		margin 0 !important
+
+	&.align-top
+		margin-top 20px
+	&.fill
+		width 100% !important
+.pricing-table
+	&.pricing-custom
+		.bullet-item
+			text-align left !important
+			i
+				display inline-block
+				width 9%
+				&::after
+					content 'Incompleto'
+
+				&.completo
+					color #008080
+					font-weight bold
+					font-style normal
+					text-align center !important
+					
+					&::after
+						content 'Completo'
+
+				&.incompleto
+					color #C10000
+					font-weight bold
+					font-style normal
+					text-align center !important
+					
+					&::after
+						content 'Incompleto'
+
+			span
+				display inline-block
+				width 89%
+
+		&.complete
+			color red
+
+.table
+	tbody
+
+		&.custom-inputs
+
+			td
+				clear()
+				height 25px
+
+				input
+					clear()
+					margin-top 5px !important
+					height 25px
+.table-custom-parciales
+	tbody
+		tr
+			td
+				&:hover
+					background-color #008080
+					-webkit-print-color-adjust exact
+					cursor pointer
+					color #fff
+				&.active
+					background-color #008080
+					-webkit-print-color-adjust exact
+					color #fff
+.tabs
+	&.custom
+		dd,
+		li
+			a
+				background-color color-base
+				border-bottom 1px solid #EEE
+				color #FEFEFE
+
+			&.active,
+			&:hover
+				a
+					background-color color-hover
+					color #FEFEFE
+					font-weight bold
+					text-shadow 3px 3px 10px #333
+.inputX2
+	input	
+		transform scale(1.5)
+		margin-top 10px
+.tabs-content
+	.content
+		padding-top 0px
+
+	.table
+		max-width 78%
+		margin 0 auto
+	&.scrollY		
+		height 400px
+		overflow-y scroll
+
+.text-center
+	text-align center
+.subrayar
+	border-bottom 1px solid #000
+	width 100%
+	span
+		margin-left 10px
+	span.sin-renglon
+		background-color #fff
+		-webkit-print-color-adjust exact
+		padding-bottom 10px 
+		margin-left 0px
+		margin-right 5px
+.logo-recibo
+	width 100px	
+		
+.label-recibo
+	font-weight bold !important
+	font-size 15px !important
+.sin-pading
+ 	padding 0
+.sin-pading-min
+	padding-left 5px
+	padding-right 5px
+.espacio-top-min
+	margin-top 10px
+.espacio-top
+	margin-top 20px
+.contorno-formatos
+	border 1px solid #858585
+	border-radius 5px
+.total-recibo
+	border 1px solid #858585
+	padding 9px
+	padding-right 32px
+	border-radius 5px
+.floatR
+	float right
+.tabs
+	&.verticaltabs
+		&.tabs-custom
+			dd
+				&.active
+					a
+						background-color color-hover
+						-webkit-print-color-adjust exact
+				a
+					background-color color-base
+					-webkit-print-color-adjust exact
+					&:hover
+						background-color color-hover
+						-webkit-print-color-adjust exact
+				i,
+				span
+					display block
+					text-align center
+					color #fff
+					font-size 12px
+				i
+					color #fff
+					font-size 32px
+	&.tabs-custom
+		dd
+			&.active
+				a
+					background-color color-hover
+					-webkit-print-color-adjust exact				
+			a
+				background-color color-base
+				-webkit-print-color-adjust exact
+				
+				&:hover
+					background-color color-hover
+					-webkit-print-color-adjust exact
+			i,
+			span
+				display block
+				text-align center
+				color #fff
+				font-size 12px
+			i
+				color #fff
+				font-size 32px
+
+.accordion
+	&.accordion-custom
+		dd.accordion-navigation		
+			a
+				background-color color-base
+				-webkit-print-color-adjust exact
+				color #fff
+				border-bottom solid #fff
+				&:hover
+					background-color color-hover
+			&.active
+				a
+					background-color color-hover
+			div
+				&.content
+					border 1px solid #C0C0C0
+					background-color #EAEAEA
+					-webkit-print-color-adjust exact					
+					&.calificaciones
+						height 500px 
+						overflow-y scroll !important
+.check-boletas
+	margin-left 15
+	margin-right 10
+.bloque
+	background-color color-base
+	-webkit-print-color-adjust exact
+	padding 1em 0
+	margin-top 5px
+	max-height 200px
+	&:hover
+		background-color #008080
+		-webkit-print-color-adjust exact
+		cursor pointer
+	
+	&.no-active
+		border 2px double red !important
+
+		&:hover
+			background-color color-base
+			-webkit-print-color-adjust exact
+			cursor default
+
+	i
+		color #fff
+		display block
+		font-size 52px
+		text-align center
+		padding-top 20px
+
+	span
+		color #fff
+		display block
+		margin 0 auto
+		text-align center
+		word-wrap break-word
+	&.no-hover:hover
+		background-color color-base !important
+		-webkit-print-color-adjust exact
+			
+.bloqueCalificaciones
+	background-color #797878
+	padding 1em 0
+	margin-top 5px
+	height 75px
+	max-height 75px
+	&:hover
+		background-color #008080
+		-webkit-print-color-adjust exact
+		cursor pointer
+	.iconCuadro
+		i			
+			color #fff
+			font-size 50px
+			text-align center
+			padding-top 20px
+			margin-left 15px
+			margin-right 5px
+		diplay inline-block
+	.textCuadro
+		span
+			color #fff
+			font-size 13px
+			display block
+			word-wrap break-word
+		display inline-block
+.contenedorScroll-y
+	overflow-y hidden !important
+	overflow-y scroll !important
+	max-height 500px
+	height 500px
+	border 1px solid #fff !important
+.btn	
+	border-radius 50px !important
+	box-shadow none !important
+	border 1px solid #fff !important
+	height 50px !important
+	min-width 100px !important
+	width auto !important
+	color #000 !important
+	padding-top 15px !important
+	background-image none !important
+	text-shadow none !important
+	&.btn-success
+		background-color #3af577 !important
+	&.btn-primary
+		background-color #18e3e0 !important	
+	&.btn-danger
+		background-color #ff3535 !important
+	&.btn-save
+		background-color #f9df0c !important
+	&.fill
+		width 100% !important
+	&.btn-90
+		border-radius 0px !important
+.gvDatos
+	width 100% !important
+	margin-bottom 50px !important
+.bb-grid 
+	margin 0 auto
+	thead
+		border-bottom 3px solid #f9df0c !important
+		background-color rgba(0, 0, 0, .0)
+		tr
+			th
+				border 1px solid rgba(0, 0, 0, .0)
+				strong
+					span
+						color #000
+						font-size 14px !important
+	tbody
+		tr
+			border 1px solid rgba(0, 0, 0, .0)
+			border-bottom 1px solid #f1f1f1 !important
+			color #9d988d !important
+			font-size 14px !important		
+			td
+				padding 10px !important
+		span
+			color #333
+
+		.gv-order 
+			cursor  pointer
+			
+			&.gv-asc strong span::after 
+				content  icon-asc
+				float  right
+				font-family  'icomoon'
+				font-size  1em
+				font-weight  normal !important
+			
+			&.gv-desc strong span::after 
+				content  icon-desc
+				float  right
+				font-family  'icomoon'
+				font-size  1em
+				font-weight  normal !important
+				
+			input 
+				height  1.7em
+				font-weight  normal !important
+			
+		.gv-col-command::before 
+			content  icon-settings
+			font-family  'icomoon'
+			font-size  1.5em
+			font-weight  normal
+	
+	tbody
+		border 1px solid #DDD
+		
+		input[type="checkbox"] 
+			border 1px solid blue !important
+			display  inline-block
+			height  80% !important
+			margin-top  1em
+			width  80% !important
+			
+		tr
+			cursor  pointer !important
+			&.isSelected
+				background-color #ffffff
+
+				td
+					color #000
+					font-weight bold			
+			
+	tfoot
+		border 1px solid transparent
+		background-color white
+		
+		tr 
+			strong
+				span
+					margin-top 5px !important
+			td
+				font-weight normal !important
+
+		.gv-all::before 
+			content  icon-all
+			font-family  'icomoon'
+			font-size  1.7em
+			
+		.gv-begin::before 
+			content  icon-begin
+			font-family  'icomoon'
+			font-size  1.7em
+
+		.gv-end::before 
+			content  icon-end
+			font-family  'icomoon'
+			font-size  1.7em
+			
+		.gv-next::before 
+			content  icon-nextCustom
+			font-family  'icomoon'
+			font-size  1.7em
+
+		.gv-none::before 
+			content  icon-calendar
+			font-family  'icomoon'
+			font-size  1.7em
+			
+		.gv-pager
+			
+			.columns
+				height 30px
+				padding-top 5px
+						
+			span,
+			input 
+				color  #333
+				display  inline-block !important
+				line-height  25px
+				vertical-align  top
+			a
+				color #000 !important
+				background-color #f9df0c
+				padding-top 5px
+				padding-left 5px
+				border-radius 50px
+				padding-right 5px
+			a:hover
+				color  #000
+				background-color #f9df0c
+				padding-top 5px
+				padding-left 5px
+				border-radius 50px
+				padding-right 5px
+				text-decoration none !important
+				transition-duration  0.5s
+
+		.gv-pages
+			height  25px !important
+			width  50px !important
+			margin-top 6px !important
+
+		.gv-prev
+			margin-top 0px !important	
+
+			&::before 
+				content  icon-prevCustom
+				font-family  'icomoon'
+				font-size  1.7em
+.gv-filter
+	border 1px solid rgba(0, 0, 0, .0)	
+	&::-webkit-input-placeholder
+		color #cecece !important
+		font-weight 400
+		&::before
+			font-family 'icomoon'
+			content icon-search
+//*******************Login***************************
+.text-nav
+	font-family 'Open Sans', sans-serif !important	
+
+.fullW
+	width 100% !important

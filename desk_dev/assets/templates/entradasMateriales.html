@@ -1,0 +1,128 @@
+<section id="entradasMateriales">
+	<div class="titulo">
+		<h3><i class="icon-users"></i>Entradas | <span class="subTitulo">Materiales</span></h3>
+	</div>
+	<div class="row">
+		<table class="gvDatos"></table>
+	</div>
+	<div class="medium modal-save reveal-modal reveal-custom small" data-reveal='data-reveal'>
+		<div class="pop-head">
+			<label><i class="icon-users"></i>Material<label>
+		</div>
+		<form class="form-data pop-body" data-abide>
+			<div class="row">
+				<div class="small-12 columns">
+					<label>
+						Material: <small>Requerido</small>
+						<input type="text" placeholder="Nombre del material" data-field="idMaterial" data-include="material" class="tya" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+			</div>
+			<div class="row">
+				<!-- <div class="small-3 columns">
+					<label>
+						Precio: <small>Requerido</small>
+						<input type="text" placeholder="Precio" data-field="precio" maxlength="6" data-mask="numeros" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div> -->
+				<div class="small-3 columns">
+					<label>
+						M³: <small>Requerido</small>
+						<input type="text" placeholder="Cantidad metros³" data-field="cantidad" maxlength="10" data-mask="decimalesx" pattern="decimales" required>
+					</label>
+					<small class="error">Este campo es requerido y debe ser numerico. Pj. 300, 500.5</small>
+				</div>
+				<div class="small-3 columns">
+					<label>
+						Hora: <small>Requerido</small>
+						<input type="text" placeholder="15:05" data-field="hora" maxlength="5" data-mask="horas" pattern="horas" required>
+					</label>
+					<small class="error">Este campo es requerido. Pj. 15:05</small>
+				</div>
+				<div class="small-6 columns">
+					<label>
+						Fecha: <small>Requerido</small>
+						<input type="text" placeholder="YYYY-MM-DD" data-field="fecha" class="date" maxlength="10" data-mask="fecha" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+			</div>
+		</form>
+		<div class="row pop-foot">
+			<div class="small-12 columns">
+				<button type="button" class="btn-aceptar btn tiny btn-success button ico-guardar">Guardar</button>
+				<button type="button" class="btn-cancelar btn tiny btn-danger button ico-cancelar">Cancelar</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="medium modal-insert reveal-modal reveal-custom show-scroll custom" data-reveal='data-reveal'>
+		<div class="pop-head">
+			<label><i class="icon-users"></i>Consumible<label>
+		</div>
+		<form class="form-data pop-body" data-abide>
+			<div class="row">
+				<div class="small-5 columns">
+					<label>
+						&nbsp;
+					</label>
+				</div>
+				<div class="small-3 columns">
+					<label>
+						Hora: <small>Requerido</small>
+						<input type="text" placeholder="15:05" data-field="hora" maxlength="5" data-mask="horas" pattern="horas" required>
+					</label>
+					<small class="error">Este campo es requerido. Pj. 15:05</small>
+				</div>
+				<div class="small-4 columns">
+					<label>
+						Fecha: <small>Requerido</small>
+						<input type="text" placeholder="YYYY-MM-DD" data-field="fecha" class="date" maxlength="10" data-mask="fecha" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-12 columns">
+					<table class="table table-custom gv-datos table-compact">
+						<thead>
+							<tr class="titulo">
+								<th>Material</th>
+								<th class="min">M³</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</form>
+		<div class="row pop-foot">
+			<div class="small-12 columns">
+				<button type="button" class="btn-aceptar btn tiny btn-success button ico-guardar">Guardar</button>
+				<button type="button" class="btn-cancelar btn tiny btn-danger button ico-cancelar">Cancelar</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="small-12 columns">
+			<button type="button" class="btn-nuevo tiny btn button ico-agregar btn-success">Agregar</button>
+			<button type="button" class="btn-modificar btn tiny btn-primary button ico-modificar">Modificar</button>
+			<button type="button" class="btn-eliminar btn tiny button btn-danger ico-cancelar">Eliminar</button>
+		</div>
+	</div>
+
+	<script type="text/template-handlebars-x" class="tmp_tr_datos">
+		{{#data}}
+			<tr data-idmaterial="{{idMaterial}}" data-nombre="{{nombre}}">
+				<td class="on-padding">{{nombre}}</td>
+				<td>
+					<input type="text" class="text-right" data-field="cantidad" value="0">
+				</td>
+			</tr>
+		{{/data}}
+	</script>
+
+</section>

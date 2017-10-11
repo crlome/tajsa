@@ -1,0 +1,73 @@
+<section id="rpt_inventarios">
+	<div class="titulo">
+		<h3><i class="icon-users"></i>Reporte | <span class="subTitulo">Historial</span></h3>
+	</div>
+
+	<form class="form-data" data-abide>
+		<div class="row">
+			<div class="small-5 columns">
+				<label>
+					Fecha Inicio:
+					<input type="text" placeholder="YYYY-MM-DD" data-field="feini" class="date" maxlength="10" data-mask="fecha" required>
+				</label>
+				<small class="error">Este campo es requerido.</small>
+			</div>
+			<div class="small-5 columns">
+				<label>
+					Fecha Fin:
+					<input type="text" placeholder="YYYY-MM-DD" data-field="fefin" class="date" maxlength="10" data-mask="fecha" required>
+				</label>
+				<small class="error">Este campo es requerido.</small>
+			</div>
+			<div class="small-2 columns">
+				<button type="button" class="btn-buscar tiny btn button ico-buscar btn-success expand">Buscar</button>
+			</div>
+		</div>
+	</form>
+
+	<div class="row pnl-resultado">
+	</div>
+
+	<script type="text/template-handlebars-x" class="tmp_table_datos">
+		{{#each data}}
+		<div class="small-12 columns">
+			<table class="table table-custom">
+				<thead>
+					<tr class="titulo">
+						<th colspan="6" class="text-center">Consumible: {{@key}}</th>
+					</tr>
+					<tr class="titulo">
+						<th>Obra</th>
+						<th class="min">Tipo</th>
+						<th class="min">Tend./Sumn.</th>
+						<th>Fecha/Hora</th>
+						<th class="min">Cantidad</th>
+						<th class="min">M³</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#.}}
+					<tr>
+						{{#ifCond tipo 2}}
+							<td>{{produccion.obra.nombre}}</td>
+							<td>{{GetTipo tipo}}</td>
+						{{else}}
+							{{#isNull idInventarioAjuste}}
+							<td colspan="2" class="text-center">{{GetTipo tipo}}</td>
+							{{else}}
+							<td colspan="2" class="text-center">Ajuste</td>
+							{{/isNull}}
+						{{/ifCond}}
+						<td>{{GetTipoUtilizado produccion.tipo}}</td>
+						<td>{{GetFecha fecha}} {{hora}}</td>
+						<td class="text-right">{{SetFormat 'money' cantidad}}</td>
+						<td class="text-right">{{SetFormat 'money' metros 0}}</td>
+					</tr>
+					{{/.}}
+				</tbody>
+			</table>
+		</div>
+		{{/each}}
+	</script>
+
+</section>

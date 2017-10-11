@@ -1,0 +1,107 @@
+<section id="impregnaciones">
+	<div class="titulo">
+		<h3><i class="icon-users"></i>Control | <span class="subTitulo">Impregnaciones</span></h3>
+	</div>
+	<div class="row">
+		<table class="gvDatos"></table>
+	</div>
+	<div class="medium modal-save reveal-modal reveal-custom small" data-reveal='data-reveal'>
+		<div class="pop-head">
+			<label><i class="icon-users"></i>Impregnacion
+				<span class="right icon-cross pointer ico-cancel"></span>
+			<label>
+		</div>
+		<form class="form-data pop-body" data-abide>
+			<div class="row">
+				<div class="small-12 columns">
+					<label>
+						Cliente: <small>Requerido</small>
+						<input type="text" placeholder="Nombre del cliente" data-field="idCliente" data-include="cliente" class="tya" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-2 columns">
+					<label>
+						Cantidad: <small>Requerido</small>
+						<input type="text" placeholder="Cantidad" data-field="cantidad" maxlength="6" data-mask="numeros" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-2 columns">
+					<label>
+						Fecha: <small>Requerido</small>
+						<input type="text" placeholder="YYYY-MM-DD" data-field="fecha" class="date" maxlength="10" data-mask="fecha" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-2 columns">
+					<label>
+						Hora: <small>Requerido</small>
+						<input type="text" placeholder="15:05" data-field="hora" maxlength="5" data-mask="horas" pattern="horas" required>
+					</label>
+					<small class="error">Este campo es requerido. Pj. 15:05</small>
+				</div>
+				<div class="small-6 columns">
+					<label>
+						Lugar: <small>Requerido</small>
+						<input type="text" placeholder="Lugar" data-field="lugar" maxlength="100" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-3 columns">
+					<label>
+						Litros Iniciales: <small>Requerido</small>
+						<input type="text" placeholder="Litros Iniciales" data-field="litrosIniciales" maxlength="10" data-mask="numeros" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-3 columns">
+					<label>
+						litrosTendidos: <small>Requerido</small>
+						<input type="text" placeholder="Litros Tendidos" data-field="litrosTendidos" maxlength="10" data-mask="numeros" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-3 columns">
+					<label>
+						metrosTendidos: <small>Requerido</small>
+						<input type="text" placeholder="Litros Tendidos" data-field="metrosTendidos" maxlength="10" data-mask="numeros" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-3 columns">
+					<label>
+						RPM: <small>Requerido</small>
+						<input type="text" placeholder="RPM" data-field="rpm" maxlength="10" data-mask="numeros" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-12 columns">
+					<label>
+						Observaciones:
+						<textarea data-field="observaciones"></textarea>
+					</label>
+				</div>
+			</div>
+		</form>
+		<div class="row pop-foot">
+			<div class="small-12 columns">
+				<button type="button" class="btn-aceptar btn tiny btn-success button ico-guardar">Guardar</button>
+				<button type="button" class="btn-cancelar btn tiny btn-danger button ico-cancelar">Cancelar</button>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="small-12 columns">
+			<button type="button" class="btn-nuevo tiny btn button ico-agregar btn-success">Agregar</button>
+			<button type="button" class="btn-modificar btn tiny btn-primary button ico-modificar">Modificar</button>
+			<button type="button" class="btn-eliminar btn tiny button btn-danger ico-cancelar">Eliminar</button>
+		</div>
+	</div>
+</section>

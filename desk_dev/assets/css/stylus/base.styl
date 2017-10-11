@@ -1,0 +1,1186 @@
+.gv-filter
+	border 1px solid rgba(0, 0, 0, .0) !important
+	border-bottom 1px solid #eaeaea !important
+	box-shadow none !important
+input
+	height 46px !important
+	&::-webkit-input-placeholder
+			color #D9D9D9
+			font-size 0.875rem !important
+
+.alert-box
+	&.custom
+		background-color #F9DF0C
+		border none
+		border-bottom 1px solid #333
+		color #333
+		font-weight bold
+		padding 5px
+
+.reveal-custom	
+	border-radius 5px !important
+
+	.pop-head
+		background-color color-base
+		position absolute
+		top 0px
+		left 0px
+		right 0px
+		padding-bottom 20px		
+		height 35px
+		
+
+		label
+			color #fff
+			position absolute
+			top 0px
+			left 10px
+			font-weight bold
+
+	.pop-body
+		margin-top 25px
+
+	.pop-foot
+		button
+			margin 5px 0 0 0
+
+	&.custom
+		padding-bottom 5px
+		padding-left 0
+		padding-right 0
+
+		.pop-body
+			border-bottom 1px solid #DDD
+			max-height 400px
+			overflow auto
+			width 100% !important
+
+
+body
+	.main
+		background url("/assets/fondo.png") no-repeat 50% 50%
+		background-size 350px 350px	
+html
+	overflow hidden !important	
+body,
+html
+	font-family Arial
+	/*font-family "PT Sans", sans-serif*/
+	font-family "Raleway", Arial, sans-serif !important
+	font-size  16px
+	height 100%
+	/*overflow hidden*/
+	width 100%
+	zoom 100%
+
+	clear()
+
+	.conSyn
+		height 60px
+		line-height 60px
+		position absolute
+		right 120px
+		top 0px
+		width 80px
+
+		clear()
+
+		i
+			color #EEE
+			cursor pointer
+			line-height 60px
+			font-size 40px
+			width 80px
+
+			clear()
+
+		transition 1s ease
+		-moz-transition 1s ease
+		-o-transition 1s ease
+		-webkit-transition 1s ease
+
+		&:hover
+			-moz-transform  rotate(960deg)
+			-o-transform  rotate(960deg)
+			-webkit-transform  rotate(960deg)
+			transform  rotate(960deg)
+
+			i
+				color #F9DF0C
+
+header
+		background-color color-base
+		//background-image color-grad
+		height 70px
+		position absolute
+		top 0
+		width 100%
+		z-index 3
+		box-shadow 2px 2px 4px 0 rgba(181, 181, 181, .5)
+
+		section
+			display inline-block
+			height inherit
+			line-height 65px
+			font-size 0.9em
+			position relative
+			top 0
+
+			a,
+			span
+				color #EEE
+
+			&.head-center
+				position absolute
+				padding 0 150px 0 230px
+				left 72px
+				right 0				
+
+				input
+					background-color #000 !important
+					border 1px solid #f9df0c !important
+					border-radius 50px
+					color #f9df0c !important
+					height 40px
+					margin-top 15px !important
+					line-height 40px
+					margin-left 1em
+					padding 0 1em
+					padding-left 57px !important
+					width 381px !important
+					min-width 370px
+					font-size 18px !important
+					&::-webkit-input-placeholder
+						color #f9df0c
+						font-size 0.875rem !important
+						&::before
+							content icon-search
+							icomoon()
+				span
+					&.help
+						margin-right 10px
+						margin-left 20px				
+						color #949494 
+						cursor pointer					
+						i
+							font-size 15px
+							color #7d013c
+				i
+					position absolute
+					left 264px
+					right 0
+					color #f9df0c
+					top 21px
+					font-size 28px					
+					width 33px !important
+					
+
+			&.head-right
+				float right
+				text-align center
+				width auto
+				margin-top 7px
+				i
+					&.icon-chevron-down						
+						color #000				
+						background-color #f9df0c
+						border-radius 50%
+						padding-left 3px
+						padding-right 4px
+
+				.user-help
+					i
+						font-size 1.5em
+						position relative
+						top 3px
+
+				.circle-user					
+					border-radius 50%
+					height 65px
+					line-height 65px
+					display inline-block
+
+					img
+						height 55px !important
+						width 55px !important
+
+				ul.user-options
+					clear()
+
+					li
+						display inline-block
+						height 65px
+						padding 0 20px
+
+						a
+							height 65px
+							text-align center
+							width 100px
+
+							&:hover
+								text-decoration none
+								color color-hover
+
+						img
+							border-radius 50%
+							height 25px
+							margin-bottom 5px
+							width 25px
+
+						&.area-user							
+							position relative
+
+							a
+								&.user-info
+									line-height 50px
+									height 50px
+									padding 25px 0
+
+								&:hover
+									color #EEE
+									text-decoration none
+
+									+ul.user-menu
+										display inline-block
+							ul.user-menu
+								position absolute
+								right 0
+								top 84px
+								z-index -5 !important
+								background-color #7e234d
+								margin 0
+								padding 0
+								padding-top 1em
+								margin-right 11px
+								border-radius 0 0 5px 5px
+								background-color color-base-menu
+
+								clear()
+
+								padding-top 1em
+
+								li
+									display block
+									height 30px
+									line-height 30px
+									min-width 150px
+									margin-left 0px !important
+									margin-bottom 16px !important
+									padding-left 10px !important
+
+									clear()
+
+									a
+										font-size 1em
+										color color-sub
+										display inline-block
+										text-align left
+										width 100%
+
+										fsombra(1px, 1px, 1px)
+
+									&:hover
+										background-color color-hover
+
+								&:hover
+									display inline-block
+ul.user-menu
+	position absolute
+	right 20px
+	top -70px
+	transition 0.5s
+	z-index 2 !important
+	background-color #f9df0c
+	margin 0
+	padding 0
+	padding-top 1em
+	margin-right 11px
+	border-radius 0 0 5px 5px	
+
+	clear()
+
+	padding-top 1em
+
+	li
+		display block
+		height 30px
+		line-height 30px
+		min-width 150px
+		margin-left 0px !important		
+		padding-left 10px !important		
+		padding-bottom 16px !important	
+		font-size 14px !important
+		margin-bottom 10px  !important
+		&:hover
+			background-color #fff !important
+			cursor pointer !important
+
+		clear()
+
+		a
+			font-size 1em
+			color #000
+			display inline-block
+			text-align left
+			width 100%			
+	&:hover
+		display inline-block
+.user-data-open
+	top 67px !important
+	transition 0.5s
+
+::-webkit-scrollbar
+	width 15px
+	display none !important
+	
+::-webkit-scrollbar-track
+	background-color rgba(0, 0, 0, .0)
+	display none !important
+
+::-webkit-scrollbar-thumb
+	background-color #000
+	border-radius 10px
+	
+::-webkit-scrollbar-thumb:hover
+	background-color #000
+	cursor pointer
+
+::-webkit-scrollbar-corner
+	display none
+
+.show-scroll
+	::-webkit-scrollbar-track
+		background-color #EEE !important
+		display inline-block !important
+
+	::-webkit-scrollbar
+		width 7px
+		display inline-block !important
+
+nav,
+main
+	bottom 0
+	left 0
+	padding-top 70px
+	position absolute
+	top 0
+	z-index 1
+	overflow-x none
+nav	
+	::-webkit-scrollbar
+		width 15px
+		display none !important
+	height 100%
+	padding-top 60px
+	position absolute
+	left -1px !important
+	width 289px
+	background #f9df0c	
+	top 0px
+	z-index 9
+	padding-bottom 100px !important
+	input
+		margin-left 10px !important
+		margin-right 10px !important
+		width 91% !important
+		border-radius 50px !important
+		background-color #f7e871 !important
+		border 1px solid rgba(0, 0, 0, .0) !important		
+		color #938939 !important
+		height 30px
+		line-height 30px
+		padding-left 10px
+		font-size 14px
+		padding-left 45px !important
+		margin-bottom 10px	
+		&::-webkit-input-placeholder
+			color #938939 !important
+			padding-left 30px !important
+			font-size 0.875rem !important
+			&::before
+				content icon-search
+				icomoon()
+	ul
+		&.menu-n1
+			overflow-y scroll
+			overflow-x hidden			
+			height 96%
+			padding-bottom 40px
+		clear()		
+		&.menu-n1,
+		&.search-n1
+			li
+				display block
+				font-weight bold
+				line-height 50px				
+				padding-left 27px !important
+				&.has-submenu
+					padding-top 10px
+										
+				a										
+					left -25px
+					width 109%
+					height 50px
+					top -9px
+					position relative
+					display inline-block					
+					text-decoration none !important
+					span.textSubMenu
+						margin-left 10px !important			
+				i
+					position absolute
+					display inline-block
+					right 1em
+					color #807732					
+					top -2px
+					font-size 28px
+					left 0
+					margin-left 16px
+					margin-top 10px
+					&.inicioM2
+						position absolute
+						left 2px
+						font-size 16px
+						top 13px
+						margin-top 0px !important
+						color #EAEAEA !important						
+				label
+					&.textMenu
+						margin-left 59px !important
+						margin-top 10px !important
+						font-size 18px !important
+						font-weigth 100 !important
+						font-weigth normal !important							
+					
+
+				&:hover
+					background-color #fff
+					underline none !important
+					cursor pointer
+					
+					a					
+						span
+							background-color #fff
+							width 7px !important
+							height 55px !important
+							position absolute !important
+							top 0px !important
+							left 0px !important
+				
+				&.isActive
+					background-color #fff
+					> a
+						color #fff
+					label
+						font-weight 700
+						color #000
+					i
+						color #000			
+
+		&.menu-n2		
+			background-color #eaeaea			
+			margin-top 3px !important
+			display none
+			margin-left -27px !important
+			padding-top 5px			
+
+			li
+				font-size 0.8em
+				line-height 40px				
+
+				a
+					border none
+					color #807732 !important
+					padding-left 3em
+					text-decoration none !important
+					line-height 48px					
+					position relative
+					top 0px
+
+
+				&:hover
+					background-color #eaeaea !important
+					a,i
+						color #000 !important
+				&.isActive
+					background-color #eaeaea !important
+					a,i
+						color #000 !important
+
+		&.search-n1
+			background-color #eaeaea
+
+			li
+				font-size 0.8em
+				line-height 40px
+
+				a
+					border none
+					padding-left 3em
+					color #290617
+
+					&:hover
+						color #f1f1f1				
+
+	&.is-menu-open
+		left 0px
+
+		transition left 0.3s
+.head-left
+	margin-top -61px !important
+	text-align center
+	width 289px
+	height 70px
+	background #fff
+	img		
+		margin-top 4px		
+main
+	padding 70px 0 0 0
+	right 0
+	z-index 1
+
+	transition left 0.8s
+
+	&.is-menu-open
+		left 300px
+
+		transition left 0.3s
+small
+	color red
+	font 12px
+.subraya
+	border-bottom 1px solid #000
+	width 100%
+	margin-bottom 30px
+	span
+		margin-left 10px
+	span.sinRenglon
+		background-color #fff
+		-webkit-print-color-adjust exact
+		padding-bottom 10px 
+		margin-left 0px
+		margin-right 5px
+	span.boletaObs
+		font-size 20px
+		font-weight bold
+		color #000
+		
+.wrap-layer
+	background-color rgba(30, 30, 30, 0.5)
+	display none
+	bottom 0
+	left 0
+	position absolute
+	right 0
+	top 0
+	z-index 7
+
+	&.is-menu-open
+		display block
+
+table
+	tbody
+		tr
+			&.pagado
+				color #FF2323 !important
+		tr.is-selected
+			background-color #31353D
+
+			td
+				color #EEE
+				font-weight bold
+
+	&.table-compact
+		tbody
+
+			td:not(.on-padding)
+				padding 0
+
+				input,
+				textarea
+					margin 0
+
+				input
+					height 36px !important
+
+	&.table-content-center
+		th,
+		td
+			font-size 0.6em
+			text-align center
+	&.table-vertical	
+		thead
+			tr
+				th					
+					&.vertical-th						
+						position relative
+						span
+							transform rotate(270deg) !important
+							-webkit-transform rotate(270deg) !important
+							bottom 78px !important
+							display block
+							height 45px
+							font-size 10px !important
+							left -79px
+							line-height 35px !important
+							margin 0
+							padding 0
+							padding-left 5px
+							position absolute
+							width 200px
+							word-break break-word
+							text-align left
+							&.thFinal
+								border-bottom 1px solid #333
+								height 43px !important
+
+	&.table-custom
+		width 100%
+		margin-top 10px
+
+		&.no-borde-table
+			border 1px solid #fff
+
+		thead
+			tr
+				th,
+				&.titulo
+					background-color color-base
+					span
+						color #fff
+						padding-left 10px !important
+					label
+						color #fff
+				th
+					color #fff
+					&.min
+						width 100px
+					&.boletaVertical
+						width 45px !important
+						height 207px
+					&.min-date
+						width 130px
+					&.min-check
+						width 180px
+						padding-top 20px				
+
+			&.centered
+				th
+					text-align center
+
+		tbody
+			tr
+				td
+					
+					border 1px solid #D6D6D6
+					&.min
+						width 100px
+					&.min-date
+						width 130px
+					&.tableEmpty
+						background-color #EAEAEA
+					&.centered
+						text-align center			
+
+			&.centered
+				tr
+					td
+						label
+							text-align center
+
+			&.wrap
+				tr
+					td
+						label
+							padding 0 5px
+							white-space nowrap
+
+			&.no-borde-cell
+				tr
+					td
+						border 1px solid #fff
+						padding-left 9px !important
+		tfoot
+			tr
+				td
+					border 1px solid white
+
+	&.pointer
+
+		tbody
+
+			tr
+				&:hover
+					cursor pointer
+					background-color #16a89f
+					td
+						color #fff
+				&.active
+					cursor pointer
+					background-color #16a89f
+					td
+						color #fff
+
+.bb-grid 
+	margin 0 auto
+	
+	thead
+		border 1px solid #DDD
+		background-color #FEFEFE
+		
+		span
+			color #333
+
+		.gv-order 
+			cursor  pointer
+			
+			&.gv-asc strong span::after 
+				content  icon-asc
+				float  right
+				font-family  'icomoon'
+				font-size  1em
+				font-weight  normal !important
+			
+			&.gv-desc strong span::after 
+				content  icon-desc
+				float  right
+				font-family  'icomoon'
+				font-size  1em
+				font-weight  normal !important
+				
+			input 
+				height  1.7em
+				font-weight  normal !important
+			
+		.gv-col-command::before 
+			content  icon-settings
+			font-family  'icomoon'
+			font-size  1.5em
+			font-weight  normal
+	
+	tbody
+		border 1px solid #DDD
+		
+		input[type="checkbox"] 
+			border 1px solid blue !important
+			display  inline-block
+			height  80% !important
+			margin-top  1em
+			width  80% !important
+			
+		tr
+			&.isSelected
+				background-color #CBCBCB !important
+
+				td
+					color #EEE
+					font-weight bold
+			
+	tfoot
+		border 1px solid transparent
+		background-color white
+		
+		tr 
+			td
+				font-weight normal !important
+
+		.gv-all::before 
+			content  icon-all
+			font-family  'icomoon'
+			font-size  1.7em
+			
+		.gv-begin::before 
+			content  icon-begin
+			font-family  'icomoon'
+			font-size  1.7em
+
+		.gv-end::before 
+			content  icon-end
+			font-family  'icomoon'
+			font-size  1.7em
+			
+		.gv-next::before 
+			content  icon-next
+			font-family  'icomoon'
+			font-size  1.7em
+
+		.gv-none::before 
+			content  icon-calendar
+			font-family  'icomoon'
+			font-size  1.7em
+			
+		.gv-pager
+			
+			.columns
+				height 30px
+				padding-top 5px
+			
+			a,
+			span,
+			input 
+				color  #333
+				display  inline-block !important
+				line-height  25px
+				vertical-align  top
+				
+			a:hover
+				color  #F22
+				transition-duration  0.5s
+
+		.gv-pages
+			height  25px !important
+			width  50px !important
+
+		.gv-prev 
+			margin-top -7px
+			transform  rotate(180deg)
+
+			&::before 
+				content  icon-next
+				font-family  'icomoon'
+				font-size  1.7em
+
+.icon-spin
+	-webkit-animation spin 2s infinite linear
+	-moz-animation spin 2s infinite linear
+	-o-animation spin 2s infinite linear
+	animation spin 2s infinite linear
+
+.is-hidden
+	display none !important
+
+.is-hidden-soft
+	display none
+
+.loading
+	background-color rgba(30, 30, 30, 0.5)
+	height 100%
+	left 0
+	position absolute
+	top 0
+	width 100%
+	z-index 9999
+
+	label 
+		background-color #DEDEDE
+		border 1px solid #333
+		color #333
+		font-size 1.1em
+		left 45%
+		padding 0.5em 1em
+		position absolute
+		top 45%
+
+		i
+			color #333
+
+.twitter-typeahead
+	display block
+	width 100%
+
+	&.error
+		padding 0 !important
+
+	&::before
+		background-color #000 !important
+		color #f9df0c !important
+		content '\f02e'
+		font-family 'icomoon'
+		border-radius 5px 0 0 5px
+		height 46px
+		left 0
+		line-height 49px
+		position absolute
+		text-align center
+		top 0
+		width 25px
+		z-index 1
+
+	.error
+		margin 0 !important
+	.tya-search
+		display none !important
+	
+	.tt-dropdown-menu
+		margin-top -10px
+
+	.tt-hint,
+	.tt-input
+		padding-left 30px !important
+		height 46px !important
+		padding-bottom 5px !important
+		&::-webkit-input-placeholder
+			color #EBEBEB
+			font-size 0.875rem !important			
+
+	.tya-clear
+		display none
+		position absolute
+		right 10px
+		top 15px
+
+	.tt-input
+		&[disabled="disabled"]
+			background-color #DDD !important
+
+			&~.tya-clear
+				display none !important
+
+	.tya-loading
+		display none
+		color #33D
+		position absolute
+		right 30px
+		top 12px
+
+		&::before
+			content icon-spinner
+			font-family 'icomoon'
+
+.margin-off
+	margin 0 !important
+
+.pointer
+	cursor pointer
+
+.pnlAlert
+	heigh auto
+	margin-top 65px
+	position absolute
+	right 0
+	top 0
+	width 300px
+	z-index 9998
+
+	.close
+		font-weight bold
+		opacity 1
+		top 20px
+.datepicker-close
+	display none
+
+.bordered
+	border 1px solid blue !important
+.rotar270
+	transform rotate(270deg) !important
+	width 65%
+	margin-top 29%
+	margin-left -30%
+.tituloObs	
+	text-align center
+	font-size 30px
+	font-weigth bold
+	color #000
+	&.ladoA
+		margin-top -35%
+.mesesBoleta
+	transform rotate(270deg)
+	margin-top -127px
+	text-align center
+	font-size 30px
+	font-weigth bold
+	color #000
+.floatR
+	float right !important
+.floatL
+	float left !important
+////////////////////////////////LOGIN//////////////////////////////////////////
+.bodyTajsa
+	overflow hidden !important
+	z-index -1
+.loginContent	
+	height 500px
+	width 300px
+	margin 0 auto
+	margin-top -123px
+.error-login
+	i
+		color #dc002e
+		margin-right 5px !important
+.loginLogo	
+	margin auto
+	width 288px
+	margin-top -85px
+	img
+		width 285px
+		height 250px
+		position relative		
+		top -125px !important
+	label
+		&.textLogin			
+			font-family 'Lato', sans-serif
+			font-weigth 100 !important
+			font-size 30px			
+			position relative
+			left 92px
+			font-size 34px
+			top -161px
+			color #000
+		&.textLogin2		
+			font-family 'Lato', sans-serif
+			font-weigth 100 !important
+			font-size 30px			
+			position relative
+			left 86px
+			font-size 24px
+			top -161px
+			color #000
+
+.loginLogoFooter	
+	img
+		width 50px
+		height 50px
+		margin-left 15px
+		margin-top -22px !important
+	span
+		color #f9df0c !important
+		position relative
+		bottom 7px
+	a		
+		padding-top 29px
+		padding-bottom 9px
+		position relative
+		top 0px
+		left -17px
+.logoITDHeader
+	width 101px
+	margin-left 18%
+	padding-left 135px
+	img
+		width 59px !important	
+		margin-left 22% !important
+
+.textLogin
+	display inline-block
+.side2
+	position fixed
+	bottom 0
+	left 0
+	width 100%
+	height 65%
+	background-color #f9df0c
+	z-index -1
+.loginControls
+	z-index 2
+	
+.contentText
+	width 100% !important
+	text-align center !important
+.textLogin1
+	font-weigth 100 !important
+.textLogin2
+	font-weigth 100 !important
+	color #991151
+.form-login
+	margin-bottom -14px !important
+	input
+		border 1px solid rgba(0, 0, 0, .0)
+		background-color #f7e871 !important
+		text-align center !important
+		width 100%
+		height 50px !important
+		border-radius 50px	
+		&::-webkit-input-placeholder
+			text-align center !important
+			color #938939
+			font-size 0.875rem !important
+.loginBttn	
+	width 100%
+	height 50px
+	font-family 'Lato', sans-serif
+	border-radius 50px		
+	box-shadow 0 5px 6px 0 #bba80c
+	background-color #fff
+	padding-top 13px !important
+	color #000
+	margin-top -6px
+	&:hover
+		background-color #fff
+		color #000
+	&:focus
+		background-color #fff !important
+		color #000 !important
+.msnError
+	margin-top -11px !important
+		
+.footer
+	width 100%
+	height 60px !important
+	border 1px solid rgba(0, 0, 0, .0)
+	border-top 1px solid #dedede
+	position absolute !important
+	bottom 0px !important
+	padding-top 10px
+	background-color #000
+	div
+		&.leftFooter			
+			width 235px !important
+			margin auto !important
+			
+			label
+				color #5a002b !important
+				font-size 14px !important
+				margin-left 20px !important			
+.rightFooter
+	position absolute	
+	right 10px !important
+	top 25px !important
+	color #f9df0c !important
+	font-size 14px !important
+	img
+		width 100px	
+		height 13px !important
+		margin-bottom 2px
+.pop-head
+	width 100%
+	padding 0px
+	border-radius: 5px 5px 0 0
+	position absolute
+	left 0px
+	height 45px !important
+	top 0px
+	background-color #000
+	label
+		color #f9df0c !important
+		margin-left 20px !important
+		margin-top 10px !important
+		font-size 18px
+	i
+		font-size 25px
+		margin-right 10px
+.close-reveal-modal
+	background-color red !important
+	color #fff !important
+	border-radius 50px !important
+	padding-right 4px
+	padding-left 4px
+	font-size 23px !important
+.modal-body
+	margin-top 30px !important
+.modal-title
+	color #f9df0c	
+	margin-left 20px
+	margin-top 10px
+	i
+		margin-right 10px
+.left300px
+	margin-left 300px !important
+
+#load_content
+	overflow-y scroll !important
+	padding-left 289px !important
+	width 100% !important
+	height 100% !important
+
+	>section
+		overflow auto
+		height 100%
+		max-height 100%
+
+.busqueda
+	i
+		position relative
+		top 43px
+		left 20px
+		font-size 34px
+		color #938939

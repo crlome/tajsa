@@ -1,0 +1,244 @@
+nav
+	margin-top 40px
+header
+	background-color color-base
+	height 50px
+	left 0
+	overflow hidden
+	position relative
+	top 0
+	z-index 10
+	font-family 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif !important
+
+	section
+		height 50%
+
+		&.icon-list
+			left 205px
+			position absolute
+			right 0
+			top 0
+
+			ul
+				clear()
+				display inline-block
+				vertical-align top
+
+				&.pull-right				
+					margin-right 1em
+					float right
+
+				li
+					display inline-block
+					font-size 1.3em
+					line-height 50px
+					font-weigth bold
+
+					.info-plantel
+						border-bottom 1px solid #fff
+						font-weigth bold
+						font-family 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif
+					.info-periodo
+						color color-font
+						font-family 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif
+
+					a
+						color color-font
+						
+						
+		&.menu
+			height 50px
+			cursor pointer
+			display block
+			float left
+			width 120px	
+			border-radius 0 0px 50px 0px
+			transition 0.5s		
+			figure,
+			span
+				display inline-block
+				line-height 50px
+				vertical-align top
+			span
+				&.icono
+					display inline-block
+					text-align center
+					width 35px
+
+					span
+						display inline-block
+						width 100%
+						color #EEE
+						font-size  2em
+
+				&.lblUsuario
+					color color-font
+					font-size 1em
+					padding-left 1em
+					width 155px
+					font-family 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif					
+
+			&:hover
+				background-color #16a89f
+				transition 0.5s
+			&.selected
+				background-color #16a89f
+				
+::-webkit-scrollbar
+	width 15px
+::-webkit-scrollbar-track
+	background-color #25303B
+::-webkit-scrollbar-thumb
+	background-color #16a89f
+	border-radius 10px
+	
+::-webkit-scrollbar-thumb:hover
+	background-color #16a89f
+	cursor pointer
+::-webkit-scrollbar-corner
+	display none
+.logo-nav
+	img
+		width 100px
+		height 100px
+		margin-top -50px !important
+		margin-left 19%
+.text-logo
+	color #fff
+	font-family 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif
+	margin-left 90px
+	position absolute
+	top 128px
+.user-data
+	width 350px
+	height 300px
+	background-color #25303B
+	position absolute
+	right 40px
+	top -260px
+	transition 0.5s
+	z-index 2 !important
+.user-data-open
+	top 50px !important
+	transition 0.5s
+.profile
+	border-radius 0 116px 0px 87px
+	height 50px
+	cursor pointer
+	display block
+	float left
+	width 260px !important
+	transition 0.5s
+	label.lblUsuario
+		color #fff
+		font-size 1em
+		padding-left 1em
+		width 155px
+		font-family 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif
+		i
+			font-size 28px !important
+			background-color #16a89f
+			transition 0.5s
+			border-radius 36px
+			padding 10px
+			position relative
+			top 11px
+		span
+			text-transform uppercase
+			position relative
+			top -35px
+			left 52px
+			font-size 15px
+			width 121px !important
+	&.pull-right
+		margin-right 40px !important
+		float right
+
+	&:hover
+		background-color #16a89f !important
+		transition 0.5s
+		i
+			background-color #25303B !important
+			transition 0.5s
+	&.selected-user
+		background-color #16a89f
+		transition 0.5s
+		i
+			background-color #25303B !important
+			transition 0.5s
+
+.lblMenu
+	color #fff
+	font-family 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif
+	line-height 47px !important
+.info-user	
+	label
+		color #fff
+		font-family 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-size 17px
+		text-align left
+		text-transform uppercase
+		padding 20px
+		&:hover
+			background-color #16a89f !important
+		span
+			color #16a89f !important
+			a
+				color #16a89f !important				
+		&:hover
+			span,a			
+				color #000 !important
+	ul
+		list-style none
+		position absolute
+		bottom 0px !important
+		li
+			display inline			
+			border-radius 50px
+			padding 17px
+			margin-left 36px
+			a
+				color #fff !important
+				text-decoration none !important
+			&:hover
+				background-color #16a89f !important
+			&.fix-li
+				padding-right 10px !important
+		a
+			color #fff !important
+.img-user
+	color #fff
+	font-size 64px
+	margin-left 38%
+	background-color #16a89f
+	border-radius 50px
+	padding 13px
+//**********************************ALERTS******************
+
+.alert-box
+	background-color #0377D2
+	border-color #0377D2
+	a
+		color #fff !important
+.alert-box.success
+	background-color #16A89F
+	border-color #16A89F
+	a
+		color #fff !important
+.alert-box.warning
+	background-color #f08a24 !important
+	border-color #f08a24 !important
+	a
+		color #fff !important
+.alert-box.alert
+	background-color #9A2126 !important
+	border-color #9A2126 !important
+	a
+		color #fff !important
+//*************************botones*******************
+button.button
+	background-color #0377D2
+	&.success
+		background-color #16a89f !important
+	&.alert
+		background-color #9A2126 !important

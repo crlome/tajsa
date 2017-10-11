@@ -1,0 +1,91 @@
+<section id="cierres">
+	<div class="titulo">
+		<h3><i class="icon-users"></i>Control | <span class="subTitulo">Corte</span></h3>
+	</div>
+
+	<form class="form-data" data-abide>
+		<div class="row">
+			<div class="small-2 columns">
+				&nbsp;
+			</div>
+			<div class="small-8 columns">
+				<table class="table table-custom table-compact gv-gases" data-field="gases">
+					<thead>
+						<tr class="titulo">
+							<th>Gas usado</th>
+							<th class="min">Cantidad</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+			<div class="small-2 columns">
+				&nbsp;
+			</div>
+		</div>
+
+	
+		<div class="row">
+			<div class="small-2 columns">
+				&nbsp;
+			</div>
+			<div class="small-4 columns">
+				<label>
+					Fecha: <small>Requerido</small>
+					<input type="text" class="date" data-field="fecha" data-mask="fecha" placeholder="YYYY-MM-DD" required>
+				</label>
+				<small class="error">Este campo es requerido</small>
+			</div>
+			<div class="small-4 columns">
+				<button type="button" class="btn-cierre align-top button success tiny block ico-datos">Crear corte</button>
+			</div>
+			<div class="small-2 columns">
+				&nbsp;
+			</div>
+		</div>
+	</form>
+
+	<div class="row">
+		<div class="small-12 columns">
+			<table class="table-custom gv-resultado">
+			</table>
+		</div>
+	</div>
+
+	<script type="text/template-handlebars-x" class="tmp_tr_gases">
+		{{#data}}
+			<tr data-idconsumible="{{idConsumible}}">
+				<td class="on-padding">{{nombre}}</td>
+				<td>
+					<label>
+						<input type="text" data-field="cantidad" value="0" required>
+						<small class="error">Este campo es requerido.</small>
+					</label>
+					<input type="hidden" data-field="idConsumible" value="{{idConsumible}}">
+				</td>
+			</tr>
+		{{/data}}
+	</script>
+	
+	<script type="text/template-handlebars-x" class="tmp_tr_produccion">
+		<thead>
+			<tr class="titulo">
+				<th>Cierre</th>
+				<th>Cantidad</th>
+				<th>Fecha</th>
+				<th>Hora</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#data}}
+			<tr>
+				<td>{{idCierre}}</td>
+				<td>{{cantidad}}</td>
+				<td>{{GetFecha fecha}}</td>
+				<td>{{hora}}</td>
+			</tr>
+			{{/data}}
+		</tbody>
+	</script>
+
+</section>

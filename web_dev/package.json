@@ -1,0 +1,36 @@
+{
+  "name": "Tajsa",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Tajsa",
+  "keywords": [],
+  "dependencies": {
+    "async": "^0.9.0",
+    "cors": "^2.7.1",
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.1",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "lodash": "^2.4.1",
+    "mysql": "^2.10.2",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "sequelize": "^3.21.0",
+    "sequelize-cli": "^2.3.1",
+    "socket.io": "^1.4.5",
+    "minimist": "1.2.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "debug": "node debug app.js"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/eumati/tajsa.git node/express eumati/tajsa.git"
+  },
+  "author": "tajsa node/express eumati",
+  "license": "",
+  "devDependencies": {}
+}

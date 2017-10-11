@@ -1,0 +1,171 @@
+<section id="productos">
+	<div class="titulo">
+		<h3><i class="icon-users"></i>Catalogo | <span class="subTitulo">Productos</span></h3>
+	</div>
+	<div class="row">
+		<table class="gvDatos"></table>
+	</div>
+	<div class="medium modal-save reveal-modal reveal-custom small" data-reveal='data-reveal'>
+		<div class="pop-head">
+			<label><i class="icon-users"></i>Producto
+				<span class="right icon-cross pointer ico-cancel"></span>
+			<label>
+		</div>
+		<form class="form-data pop-body" data-abide>
+			<div class="row">
+				<div class="small-12 columns">
+					<label>
+						Nombre: <small>Requerido</small>
+						<input type="text" placeholder="Nombre del producto" data-field="nombre" maxlength="100" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<!-- <div class="small-4 columns">
+					<label>
+						Precio: <small>Requerido</small>
+						<input type="text" placeholder="Precio del producto" data-field="precio" maxlength="10" data-mask="numeros" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div> -->
+				<div class="small-12 columns">
+					<label>
+						Observaciones:
+						<textarea placeholder="Observaciones del producto" data-field="observaciones" maxlength="1000"></textarea>
+					</label>
+				</div>
+			</div>
+		</form>
+		<div class="row pop-foot">
+			<div class="small-12 columns">
+				<button type="button" class="btn-aceptar btn tiny btn-success button ico-guardar">Guardar</button>
+				<button type="button" class="btn-cancelar btn tiny btn-danger button ico-cancelar">Cancelar</button>
+			</div>
+		</div>
+	</div>
+	<div class="medium modal-composicion reveal-modal reveal-custom small" data-reveal='data-reveal'>
+		<div class="pop-head">
+			<label><i class="icon-users"></i>Productos
+			<span class="right icon-cross pointer ico-cancel"></span>
+			<label>
+		</div>
+		<form class="form-data pop-body" data-abide>
+			<div class="row">
+				<div class="small-6 columns">
+					<label>
+						Material: <small>Requerido</small>
+						<input type="text" placeholder="Nombre del material" data-field="idMaterial" class="tya" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-4 columns">
+					<label>
+						Porcentaje: <small>Requerido</small>
+						<input type="text" placeholder="Porcentaje" data-field="porcentaje" data-mask="numeros" maxlength="3" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-2 columns text-right">
+					<button type="button" class="btn-agregar align-top tiny btn-success button ico-guardar">Agregar</button>
+				</div>
+			</div>
+		</form>
+		<div class="row">
+			<div class="small-12 columns">
+				<table class="table table-custom gv-composiciones">
+					<thead>
+						<tr class="titulo">
+							<th>Material</th>
+							<th class="min">%</th>
+							<th class="min"><span class="ico-generar"></span></th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row pop-foot">
+			<div class="small-12 columns">
+				<button type="button" class="btn-aceptar btn tiny btn-success button ico-guardar">Guardar</button>
+				<button type="button" class="btn-cancelar btn tiny btn-danger button ico-cancelar">Cancelar</button>
+			</div>
+		</div>
+	</div>
+	<div class="medium modal-consumible reveal-modal reveal-custom small" data-reveal='data-reveal'>
+		<div class="pop-head">
+			<label><i class="icon-users"></i>Consumibles
+				<span class="right icon-cross pointer ico-cancel"></span>
+			<label>
+		</div>
+		<form class="form-data pop-body" data-abide>
+			<div class="row">
+				<div class="small-6 columns">
+					<label>
+						Consumible: <small>Requerido</small>
+						<input type="text" placeholder="Nombre del Consumible" data-field="idConsumible" class="tya" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-4 columns">
+					<label>
+						Coeficiente: <small>Requerido</small>
+						<input type="text" placeholder="Coeficiente" data-field="valor" data-mask="numeros" maxlength="3" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-2 columns text-right">
+					<button type="button" class="btn-agregar align-top tiny btn-success button ico-guardar">Agregar</button>
+				</div>
+			</div>
+		</form>
+		<div class="row">
+			<div class="small-12 columns">
+				<table class="table table-custom gv-consumibles">
+					<thead>
+						<tr class="titulo">
+							<th>Consumible</th>
+							<th class="min">Coeficiente</th>
+							<th class="min"><span class="ico-generar"></span></th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row pop-foot">
+			<div class="small-12 columns">
+				<button type="button" class="btn-aceptar btn tiny btn-success button ico-guardar">Guardar</button>
+				<button type="button" class="btn-cancelar btn tiny btn-danger button ico-cancelar">Cancelar</button>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="small-12 columns">
+			<button type="button" class="btn-nuevo tiny btn button ico-agregar btn-success">Agregar</button>
+			<button type="button" class="btn-modificar btn tiny btn-primary button ico-modificar">Modificar</button>
+			<button type="button" class="btn-composicion btn tiny btn-primary button ico-modificar">Composicion</button>
+			<button type="button" class="btn-consumible btn tiny btn-primary button ico-modificar">Consumibles</button>
+			<button type="button" class="btn-eliminar btn tiny button btn-danger ico-cancelar">Eliminar</button>
+		</div>
+	</div>
+
+	<script type="text/x-handlebars-template" class="tmp_material">
+		{{#data}}
+		<tr data-idcomposicion="{{idComposicion}}" data-idmaterial="{{material.idMaterial}}">
+			<td>{{material.nombre}}</td>
+			<td class="porcentaje">{{porcentaje}}</td>
+			<td class="text-center i-eliminar pointer"><i class="ico-cancelar"></i></td>
+		</tr>
+		{{/data}}
+	</script>
+	<script type="text/x-handlebars-template" class="tmp_consumible">
+		{{#data}}
+		<tr data-idproductoconsumible="{{idProductoConsumible}}" data-idmaterial="{{consumible.idConsumible}}">
+			<td>{{consumible.nombre}}</td>
+			<td class="porcentaje">{{valor}}</td>
+			<td class="text-center i-eliminar pointer"><i class="ico-cancelar"></i></td>
+		</tr>
+		{{/data}}
+	</script>
+</section>

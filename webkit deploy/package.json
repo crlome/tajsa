@@ -1,0 +1,14 @@
+{
+  "name": "nw-demo",
+  "version": "0.0.1",
+
+  "node-main": "./server/serverapp.js",
+  "main": "http://localhost:3000",
+  "window": {
+    "title": "node-webkit demo",
+    "icon": "link.png",
+    "toolbar": true,
+    "frame": true
+  }/*,
+  "node-remote": "localhost"*/
+}

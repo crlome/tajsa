@@ -1,0 +1,163 @@
+<section id="usuarios">
+	<div class="titulo">
+		<h3><i class="icon-users"></i>Catalogo | <span class="subTitulo">Usuarios</span></h3>
+	</div>
+	<div class="row">
+		<table class="gvDatos"></table>
+	</div>
+	<div class="medium modal-save reveal-modal reveal-custom small" data-reveal='data-reveal'>
+		<div class="pop-head">
+			<label><i class="icon-users"></i>Usuario
+				<span class="right icon-cross pointer ico-cancel"></span>
+			<label>
+		</div>
+		<form class="form-data pop-body" data-abide>
+			<div class="row">
+				<div class="small-4 columns">
+					<label>
+						Nombre: <small>Requerido</small>
+						<input type="text" placeholder="Nombre del usuario" data-field="nombre" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-4 columns">
+					<label>
+						Usuario: <small>Requerido</small>
+						<input type="text" placeholder="Usuario" data-field="usuario" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+				<div class="small-4 columns">
+					<label>
+						Contraseña:
+						<input type="password" placeholder="Contraseña" data-field="contrasenia">
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-12 columns">
+					<label>
+						Planta pincipal: <small>Requerido</small>
+						<input type="text" placeholder="Nombre de la planta" data-field="idPlanta" data-include="planta" class="tya" required>
+					</label>
+					<small class="error">Este campo es requerido.</small>
+				</div>
+			</div>
+		</form>
+		<div class="row pop-foot">
+			<div class="small-12 columns">
+				<button type="button" class="btn-aceptar btn tiny btn-success button ico-guardar">Guardar</button>
+				<button type="button" class="btn-cancelar btn tiny btn-danger button ico-cancelar">Cancelar</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="medium modal-extras reveal-modal reveal-custom show-scroll custom" data-reveal='data-reveal'>
+		<div class="pop-head">
+			<label><i class="icon-users"></i>Extras<label>
+		</div>
+		<form class="form-data pop-body" data-abide>
+			<div class="row">
+				<div class="small-4 columns">
+					<label>
+						Nombre: <span class="spn-nombre"></span>
+					</label>
+				</div>
+				<div class="small-4 columns">
+					<label>
+						Usuario: <span class="spn-usuario"></span>
+					</label>
+				</div>
+				<div class="small-4 columns">
+					<label>
+						Planta: <span class="spn-planta"></span>
+					</label>
+				</div>
+			</div>
+			<br/>
+			<div class="row">
+				<div class="small-12 columns">
+					<ul class="breadcrumbs pnl-options">
+						<li class="current"><a href="pnl-menus">Menus</a></li>
+						<li class="unavailable"><a href="pnl-plantas">Plantas</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row pnl-menus pnl-panels">
+				<div class="small-12 columns">
+					<div class="list-menus row"></div>
+				</div>
+			</div>
+			<div class="row pnl-plantas pnl-panels is-hidden">
+				<div class="small-10 columns">
+					<label>
+						Planta:
+						<input type="text" placeholder="Planta" data-field="idPlanta" data-include="planta" class="tya">
+					</label>
+				</div>
+				<div class="small-2 columns">
+					<button type="button" class="btn-agregar btn tiny btn-success button align-top ico-agregar">Agregar</button>
+				</div>
+				<div class="small-12 columns">
+					<table class="table table-custom gv-plantas">
+						<thead>
+							<tr class="titulo">
+								<th>Planta</th>
+								<th class="text-center min"><span class="ico-generar"></span></th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</form>
+		<div class="row pop-foot">
+			<div class="small-12 columns">
+				<button type="button" class="btn-aceptar btn tiny btn-success button ico-guardar">Guardar</button>
+				<button type="button" class="btn-cancelar btn tiny btn-danger button ico-cancelar">Cancelar</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="small-12 columns">
+			<button type="button" class="btn-nuevo tiny btn button ico-agregar btn-success">Agregar</button>
+			<button type="button" class="btn-modificar btn tiny btn-primary button ico-modificar">Modificar</button>
+			<button type="button" class="btn-extras btn tiny btn-primary button ico-asignar">Extras</button>
+			<button type="button" class="btn-eliminar btn tiny button btn-danger ico-cancelar">Eliminar</button>
+		</div>
+	</div>
+
+	<script type="text/template-handlebars-x" class="tmp_li_menus">
+		{{#each data}}
+			<div class="small-4 columns army-equelize">
+				<ul class="menus-list">
+					<li class="nivel-n1">
+						<label>
+							<input type="checkbox"> <strong>{{@key}}</strong>
+						</label>
+						<ul class="sub-menus">
+							{{#.}}
+							<li class="nivel-n2">
+								<label>
+									<input type="checkbox" {{#ifCond tiene_menu 1}}checked="checked"{{/ifCond}} data-id="{{idMenuPagina}}"> <span>{{menun2}}</span>
+								</label>
+							</li>
+							{{/.}}
+						</ul>
+					</li>
+				</ul>
+			</div>
+		{{/each}}
+	</script>
+
+	<script type="text/template-handlebars-x" class="tmp_tr_plnatas">
+		{{#data}}
+			<tr data-idplanta="{{idPlanta}}">
+				<td class="on-padding">{{nombre}}</td>
+				<td class="text-center settings"><span class="ico-cancelar pointer"></span></td>
+			</tr>
+		{{/data}}
+	</script>
+
+</section>

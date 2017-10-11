@@ -1,0 +1,52 @@
+<section id="configuraciones">
+	<div class="titulo">
+		<h3><i class="icon-users"></i>Catalogo | <span class="subTitulo">Configuraciones</span></h3>
+	</div>
+
+	<div class="content">
+		<form class="form-data row" data-abide>
+			<div class="small-8 columns">
+				<label>
+					Consumible: <small>Requerido</small>
+					<input type="text" placeholder="Consumible" class="tya" data-field="idConsumible" required />
+				</label>
+				<small class="error">El cupo es requerido</small>
+			</div>
+			<div class="small-2 columns">
+				<label>
+					Valor: <small>Requerido</small>
+					<input type="text" maxlength="5" placeholder="Valor $" data-field="valor" data-mask="numeros" required />
+				</label>
+				<small class="error">Este campo es requerido. Solo numeros</small>
+			</div>
+			<div class="small-2 columns">
+				<button type="button" class="tiny align-top small block success button ico-guardar btn-agregar">Agregar</button>
+			</div>
+		</form>
+		<div class="row">
+			<div class="small-12 columns">
+				<table class="table-custom gv-detalles">
+					<thead>
+						<tr class="titulo">
+							<th>Consumible</th>
+							<th class="min">Valor</th>
+							<th class="min text-center"><span class="ico-generar"></span></th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/template-handlebars-x" class="tmp_tr_detalles">
+		{{#data}}
+			<tr data-idconfiguraciondetalle="{{idConfiguracionDetalle}}" data-idconsumible="{{idConsumible}}">
+				<td>{{consumible.nombre}}</td>
+				<td>{{valor}}</td>
+				<td class="text-center"><span class="ico-cancelar block pointer"></span></td>
+			</tr>
+		{{/data}}
+	</script>
+
+</section>
